@@ -11,7 +11,7 @@ function union(s1, s2) {
  */
 function intersect(s1, s2) {
     const inter = new Set();
-    
+
     s1.forEach((item) => {
       if (s2.has(item)) inter.add(item);
     });
@@ -21,6 +21,13 @@ function intersect(s1, s2) {
 /**
  * return the difference of two sets
  */
-function difference(s1, s2) {}
+function difference(s1, s2) {
+    const diff = new Set();
+  
+    s1.forEach((item) => {
+        s2.has(item) ? null : diff.add(item);
+    });
+    return diff;
+}
 
 module.exports = { union, intersect, difference };
